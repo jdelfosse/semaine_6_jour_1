@@ -34,7 +34,15 @@ class UserController < ApplicationController
 
   	def deco
   		session[:user_id] = nil
-  		flash[:deco] = "vous êtes bien deconnectés"
+  		flash[:info] = "vous êtes bien deconnectés"
 	    redirect_to request.referrer
   	end
+
+  	def index
+  		if session[:user_id]["id"].to_i  != params[:id].to_i
+  			flash[:erreur] = "Ce contenu n'est accessible qu'aux personnes connecter"
+  			redirect_to "/user/new"
+  		end
+  	end
+
 end
