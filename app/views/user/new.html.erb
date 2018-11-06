@@ -1,0 +1,49 @@
+
+<body>
+  <form id="marging" action="create" method="POST">
+    <h4>Creation d'un compte</h4>
+    <div class="form-group">
+      <div class="row">
+        <div class="col">
+          <input type="email" id='0' name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Adresse email">
+        </div>
+        <div class="col">
+          <input type="text" id='1' name="username" class="form-control" placeholder="Prenom">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col">
+          <input type="text" id='2' name="name" class="form-control" placeholder="Nom">
+        </div>        
+        <div class="col">
+          <input type="text" id='3' name="password" class="form-control" placeholder="Mot de passe">
+        </div>
+        <div class="col">
+          <input type="text" id='4' name="verifpassword" class="form-control" placeholder="Verification du mot de passe">
+        </div>
+      </div>
+    </div>
+    <button type="submit"  id='5' class="btn btn-secondary">Cree le compte</button>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  </form>
+
+
+
+
+<h4>Compte de test</h4>
+
+  <div>
+    <% @user_id = 1 %>
+    <% @all_users.each do |user| %>
+    <p> <%= @user_id %> <%= user[:first_name] %> <%= user[:last_name] %> <%= user[:email] %> <%= user[:password] %></p>
+    <% @user_id += 1 %>
+    <% end %>
+
+  </div>
+<%= session[:user_id] %>
+
+
+
+</body>

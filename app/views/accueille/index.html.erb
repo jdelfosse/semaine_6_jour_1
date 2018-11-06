@@ -1,0 +1,9 @@
+<body>
+    <% if session[:user_id] %>
+		<h1>Binvenue sur le site du club <%= session[:user_id]["first_name"] %></h1>
+		<h3><a href="/club" id="aza">clique ici pour voir les membre</a></h3>
+	<% else %>
+		<h1>Binvenue sur le site du club</h1>
+		<h3>Connecte toi ou<a href="/user/new" id="aaz"> créer un compte </a>pour voir les membre</h3>
+	<% end %>
+</body>
